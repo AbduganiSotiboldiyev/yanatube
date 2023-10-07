@@ -17,10 +17,12 @@ const VideoDetail = ()  => {
     
     const {id} = useParams()
    
+   
     useEffect(() => {
         const getData = async () => {
             try {
                 const data = await ApiService.fetching(`videos?part=snippet,statistics&id=${id}`)
+                
                 setVideoDetail(data.items[0])
                 const dataSuggested = await ApiService.fetching(`search?part=snippet&relatedToVideoId=${id}&type=video`)
                 setSuggestedVideos(dataSuggested.items)
@@ -31,6 +33,7 @@ const VideoDetail = ()  => {
         getData() 
     },[id])
     if(!videoDetail?.snippet) return <Loader/>
+   
    
     return (
         <Box minHeight={"90vh"} mb={10} mt={2} ml={{md:10}} mr={{xs : 2}}>

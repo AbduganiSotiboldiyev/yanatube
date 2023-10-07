@@ -8,6 +8,7 @@ const VideoCard = ({video, id}) => {
 
     const {name} = useParams()
     
+    
     return(
 
        

@@ -4,7 +4,7 @@ const BASE_URL = `youtube-v31.p.rapidapi.com`
 const options = {
 
   params: {
-    regionCode: 'KR',
+    regionCode: 'UZ',
     maxResults: '50'
   },
   headers: {
